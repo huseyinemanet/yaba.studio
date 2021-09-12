@@ -1,0 +1,237 @@
+/*
+
+	S T Y L E
+
+	http://yaba.studio
+
+	Project:			yaba.studio
+	Project URL:			http://yaba.studio
+	Author:				Huseyin Emanet
+	Version:			1.0
+	Tested On:			Chrome, Safari, Firefox
+	File ID:			style.css
+
+	Designed and handcrafted by yaba.studio
+	All files, unless otherwise stated, are released under the GNU General Public License
+	version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
+
+*/
+
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #000;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	display: block;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+.yaba-main-content {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100vh;
+	display: table;
+}
+
+.yaba-main-content .center {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.modal-content {
+	width: 100%;
+	height: 100vh;
+	display: table;
+}
+
+.center {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.yaba-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #000;
+	background-size: cover;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 1s 0s, visibility 0s 1s;
+	-moz-transition: opacity 1s 0s, visibility 0s 1s;
+	transition: opacity 1s 0s, visibility 0s 1s;
+}
+
+.yaba-modal .modal-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.yaba-modal.visible {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.8s, visibility 0s;
+	-moz-transition: opacity 0.8s, visibility 0s;
+	transition: opacity 0.8s, visibility 0s;
+}
+
+.yaba-modal.visible .modal-content {
+	-webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (min-width: 1100px) {
+	.yaba-modal .modal-content {
+		padding: 6em 5%;
+	}
+}
+
+.yaba-transition-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.yaba-transition-layer .bg-layer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(-2%);
+	-moz-transform: translateY(-50%) translateX(-2%);
+	-ms-transform: translateY(-50%) translateX(-2%);
+	-o-transform: translateY(-50%) translateX(-2%);
+	transform: translateY(-50%) translateX(-2%);
+	height: 100%;
+	width: 2500%;
+	background: url("../img/sequences.png") 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.yaba-transition-layer.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.yaba-transition-layer.opening .bg-layer {
+	-webkit-animation: yaba-sequence 0.8s steps(24);
+	-moz-animation: yaba-sequence 0.8s steps(24);
+	animation: yaba-sequence 0.8s steps(24);
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.yaba-transition-layer.closing .bg-layer {
+	-webkit-animation: yaba-sequence-reverse 0.8s steps(24);
+	-moz-animation: yaba-sequence-reverse 0.8s steps(24);
+	animation: yaba-sequence-reverse 0.8s steps(24);
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.no-cssanimations .yaba-transition-layer {
+	display: none;
+}
+
+svg {
+	fill: #fff;
+}
+
+@-webkit-keyframes yaba-sequence {
+	0% {
+		-webkit-transform: translateY(-50%) translateX(-2%);
+	}
+	100% {
+		-webkit-transform: translateY(-50%) translateX(-98%);
+	}
+}
+
+@-moz-keyframes yaba-sequence {
+	0% {
+		-moz-transform: translateY(-50%) translateX(-2%);
+	}
+	100% {
+		-moz-transform: translateY(-50%) translateX(-98%);
+	}
+}
+
+@keyframes yaba-sequence {
+	0% {
+		-webkit-transform: translateY(-50%) translateX(-2%);
+		-moz-transform: translateY(-50%) translateX(-2%);
+		-ms-transform: translateY(-50%) translateX(-2%);
+		-o-transform: translateY(-50%) translateX(-2%);
+		transform: translateY(-50%) translateX(-2%);
+	}
+	100% {
+		-webkit-transform: translateY(-50%) translateX(-98%);
+		-moz-transform: translateY(-50%) translateX(-98%);
+		-ms-transform: translateY(-50%) translateX(-98%);
+		-o-transform: translateY(-50%) translateX(-98%);
+		transform: translateY(-50%) translateX(-98%);
+	}
+}
+
+@-webkit-keyframes yaba-sequence-reverse {
+	0% {
+		-webkit-transform: translateY(-50%) translateX(-98%);
+	}
+	100% {
+		-webkit-transform: translateY(-50%) translateX(-2%);
+	}
+}
+
+@-moz-keyframes yaba-sequence-reverse {
+	0% {
+		-moz-transform: translateY(-50%) translateX(-98%);
+	}
+	100% {
+		-moz-transform: translateY(-50%) translateX(-2%);
+	}
+}
+
+@keyframes yaba-sequence-reverse {
+	0% {
+		-webkit-transform: translateY(-50%) translateX(-98%);
+		-moz-transform: translateY(-50%) translateX(-98%);
+		-ms-transform: translateY(-50%) translateX(-98%);
+		-o-transform: translateY(-50%) translateX(-98%);
+		transform: translateY(-50%) translateX(-98%);
+	}
+	100% {
+		-webkit-transform: translateY(-50%) translateX(-2%);
+		-moz-transform: translateY(-50%) translateX(-2%);
+		-ms-transform: translateY(-50%) translateX(-2%);
+		-o-transform: translateY(-50%) translateX(-2%);
+		transform: translateY(-50%) translateX(-2%);
+	}
+}
