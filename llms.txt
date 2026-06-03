@@ -1,0 +1,23 @@
+# yaba.studio
+
+Main URL: https://yaba.studio/
+
+Sharp websites, product interfaces and motion for ambitious brands.
+
+## Summary
+
+yaba.studio is an independent design studio for marketing websites, product UI (web and mobile), and motion design. The homepage includes service descriptions, an FAQ, and contact details.
+
+## Key sections
+
+- Services: https://yaba.studio/#services
+- FAQ: https://yaba.studio/#faq
+- Contact: https://yaba.studio/#contact
+
+## Social
+
+https://x.com/yabastudio
+
+## Crawling
+
+The site is intended to be crawlable by search engines and AI crawlers. No AI crawler restrictions are declared in robots.txt.
