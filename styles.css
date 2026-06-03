@@ -285,6 +285,18 @@ a {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .logo-channel {
+    display: none;
+  }
+
+  .logo-main {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (forced-colors: active) {
   :root {
     --brand-background: Canvas;

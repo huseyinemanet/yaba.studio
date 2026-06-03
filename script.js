@@ -1,8 +1,9 @@
 (function () {
   const logo = document.querySelector(".logo-glitch");
   const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const interactionQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-  if (!logo || motionQuery.matches) {
+  if (!logo || motionQuery.matches || !interactionQuery.matches) {
     return;
   }
 
@@ -61,6 +62,16 @@
 
   motionQuery.addEventListener("change", (event) => {
     if (event.matches) {
+      window.cancelAnimationFrame(frame);
+      frame = 0;
+      logo.style.removeProperty("--glitch-x");
+      logo.style.removeProperty("--glitch-y");
+      logo.style.removeProperty("--glitch-activity");
+    }
+  });
+
+  interactionQuery.addEventListener("change", (event) => {
+    if (!event.matches) {
       window.cancelAnimationFrame(frame);
       frame = 0;
       logo.style.removeProperty("--glitch-x");
